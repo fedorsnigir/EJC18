@@ -13,7 +13,7 @@ public class TrafficLight {
     public String knowTheLight(int minuteNumber) {
 
         if (minuteNumber < 0) {
-            throw new RuntimeException ("please enter positive number");
+            throw new RuntimeException ("please, enter positive number");
         } else {
             int minuteInOneCycle = (minuteNumber % 60) % 10;
 

@@ -1,20 +1,22 @@
 package homework2;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class TestTrafficLight {
+import static org.junit.Assert.*;
+
+public class TrafficLightTest {
+
     TrafficLight trafficLight = new TrafficLight();
     String colour;
 
     @Test
     public void testKnowTheLight() {
         colour = trafficLight.knowTheLight(1);
-        Assert.assertTrue(colour == "red light");
+        assertTrue(colour == "red light");
         colour = trafficLight.knowTheLight(3);
-        Assert.assertEquals(colour, "yellow light");
+        assertEquals("yellow light", colour);
         colour = trafficLight.knowTheLight(6);
-        Assert.assertEquals(colour, "green light");
+        assertEquals("green light", colour);
     }
 
     @Test(expected = RuntimeException.class)
