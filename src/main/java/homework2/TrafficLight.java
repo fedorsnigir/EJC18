@@ -1,4 +1,4 @@
-package lesson5.homework;
+package homework2;
 
 /**
  * the class is needed for working with traffic lights

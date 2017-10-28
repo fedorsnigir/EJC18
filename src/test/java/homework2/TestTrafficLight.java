@@ -1,4 +1,4 @@
-package lesson5.homework;
+package homework2;
 
 import org.junit.Assert;
 import org.junit.Test;
