@@ -27,7 +27,7 @@ public class Main {
             trafficLight.knowTheLight(minuteNumber);
             System.out.println(trafficLight.colour);
         } catch (NumberFormatException e) {
-            throw new RuntimeException("please, enter integer number");
+            System.err.println("please, enter integer number");
         }
     }
 }
