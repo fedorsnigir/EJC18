@@ -8,26 +8,17 @@ public class TestTrafficLight {
     String colour;
 
     @Test
-    public void testRedLight() {
-        colour = trafficLight.knowTheLight(0);
-        Assert.assertTrue(colour == "red light");
+    public void testKnowTheLight() {
         colour = trafficLight.knowTheLight(1);
         Assert.assertTrue(colour == "red light");
+        colour = trafficLight.knowTheLight(3);
+        Assert.assertEquals(colour, "yellow light");
+        colour = trafficLight.knowTheLight(6);
+        Assert.assertEquals(colour, "green light");
     }
 
-    @Test
-    public void testYellowLight() {
-        colour = trafficLight.knowTheLight(2);
-        Assert.assertEquals(colour, "yellow light");
-        colour = trafficLight.knowTheLight(4);
-        Assert.assertEquals(colour, "yellow light");
-    }
-
-    @Test
-    public void testGreenLight() {
-        colour = trafficLight.knowTheLight(5);
-        Assert.assertEquals(colour, "green light");
-        colour = trafficLight.knowTheLight(9);
-        Assert.assertEquals(colour, "green light");
+    @Test(expected = RuntimeException.class)
+    public void testException() {
+        trafficLight.knowTheLight(-8);
     }
 }

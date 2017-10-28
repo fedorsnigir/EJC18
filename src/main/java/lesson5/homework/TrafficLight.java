@@ -5,23 +5,26 @@ package lesson5.homework;
  */
 public class TrafficLight {
 
-    public String colour;
+    String colour;
 
     /**
      * the method is needed for returning the traffic light depending on entered minutes
      */
     public String knowTheLight(int minuteNumber) {
 
-        int minuteInOneCycle = (minuteNumber % 60) % 10;
-
-        if (minuteInOneCycle < 0) {
-            return colour = "you entered negative number, please enter positive";
-        } else if (minuteInOneCycle < 2) {
-            return colour = "red light";
-        } else if (minuteInOneCycle < 5) {
-            return colour = "yellow light";
+        if (minuteNumber < 0) {
+            throw new RuntimeException ("please enter positive number");
         } else {
-            return colour = "green light";
+            int minuteInOneCycle = (minuteNumber % 60) % 10;
+
+            if (minuteInOneCycle < 2) {
+                return colour = "red light";
+            } else if (minuteInOneCycle < 5) {
+                return colour = "yellow light";
+            } else if (minuteInOneCycle < 10){
+                return colour = "green light";
+            }
+            throw new RuntimeException ("error with colour");
         }
     }
 }

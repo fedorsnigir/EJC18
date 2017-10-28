@@ -8,30 +8,27 @@ import java.util.Scanner;
 /**
  * the class is needed for presenting task results
  */
-public class Presentation {
+public class Main {
 
-    private static int minuteNumber;
+    static int minuteNumber;
 
     /**
      * the main method is needed for program launch
      */
     public static void main(String[] args) throws IOException {
 
-        System.out.println("please, enter number of minutes");
+        System.out.println("please, enter minutes number");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String enteredInfo = reader.readLine();
 
         try {
             minuteNumber = Integer.parseInt(enteredInfo);
+            TrafficLight trafficLight = new TrafficLight();
+            trafficLight.knowTheLight(minuteNumber);
+            System.out.println(trafficLight.colour);
         } catch (NumberFormatException e) {
-            System.out.println("please enter integer number");
+            throw new RuntimeException("please enter positive integer number");
         }
-
-        TrafficLight trafficLight = new TrafficLight();
-
-        trafficLight.knowTheLight(minuteNumber);
-
-        System.out.println(trafficLight.colour);
     }
 }
