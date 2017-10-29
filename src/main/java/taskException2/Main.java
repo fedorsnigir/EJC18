@@ -16,43 +16,35 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.out.println(knowMonth(enteredMonth));
+    }
+
+    public static String knowMonth(String enteredMonth) {
         switch (enteredMonth) {
             case "1":
-                System.out.println("january");
-                break;
+                return "january";
             case "2":
-                System.out.println("february");
-                break;
+                return "february";
             case "3":
-                System.out.println("march");
-                break;
+                return "march";
             case "4":
-                System.out.println("april");
-                break;
+                return "april";
             case "5":
-                System.out.println("may");
-                break;
+                return "may";
             case "6":
-                System.out.println("june");
-                break;
+                return "june";
             case "7":
-                System.out.println("july");
-                break;
+                return "july";
             case "8":
-                System.out.println("august");
-                break;
+                return "august";
             case "9":
-                System.out.println("september");
-                break;
+                return "september";
             case "10":
-                System.out.println("october");
-                break;
+                return "october";
             case "11":
-                System.out.println("november");
-                break;
+                return "november";
             case "12":
-                System.out.println("december");
-                break;
+                return "december";
             default:
                 throw new RuntimeException("no such month");
         }
